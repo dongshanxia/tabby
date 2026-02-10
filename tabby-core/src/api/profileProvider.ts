@@ -79,7 +79,7 @@ export abstract class ConnectableProfileProvider<P extends ConnectableProfile> e
 
 export abstract class QuickConnectProfileProvider<P extends ConnectableProfile> extends ConnectableProfileProvider<P> {
 
-    abstract quickConnect (query: string): PartialProfile<P>|null
+    abstract quickConnect (query: string, password?: string): PartialProfile<P>|null
 
     abstract intoQuickConnectString (profile: P): string|null
 

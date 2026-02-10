@@ -266,28 +266,35 @@ export class SSHSession {
             return
         }
 
+        // 首先检查 profile.options.password（用于 CLI quickConnect 的密码参数）
+        const profilePassword = this.profile.options.password
+        console.log('[SSH] populateStoredPasswordsForResolvedUsername - profilePassword:', profilePassword)
         const storedPassword = await this.passwordStorage.loadPassword(this.profile, this.authUsername)
-        if (!storedPassword) {
+        console.log('[SSH] populateStoredPasswordsForResolvedUsername - storedPassword:', storedPassword)
+        const passwordToUse = profilePassword || storedPassword
+        console.log('[SSH] populateStoredPasswordsForResolvedUsername - passwordToUse:', passwordToUse)
+
+        if (!passwordToUse) {
             return
         }
 
         if (!this.profile.options.auth || this.profile.options.auth === 'password') {
-            const hasSavedPassword = this.allAuthMethods.some(method => method.type === 'saved-password' && method.password === storedPassword)
+            const hasSavedPassword = this.allAuthMethods.some(method => method.type === 'saved-password' && method.password === passwordToUse)
             if (!hasSavedPassword) {
                 const promptIndex = this.allAuthMethods.findIndex(method => method.type === 'prompt-password')
                 const insertIndex = promptIndex >= 0 ? promptIndex : this.allAuthMethods.length
-                this.allAuthMethods.splice(insertIndex, 0, { type: 'saved-password', password: storedPassword })
+                this.allAuthMethods.splice(insertIndex, 0, { type: 'saved-password', password: passwordToUse })
             }
         }
 
         if (!this.profile.options.auth || this.profile.options.auth === 'keyboardInteractive') {
-            const existingSaved = this.allAuthMethods.find(method => method.type === 'keyboard-interactive' && method.savedPassword === storedPassword)
+            const existingSaved = this.allAuthMethods.find(method => method.type === 'keyboard-interactive' && method.savedPassword === passwordToUse)
             if (!existingSaved) {
                 const updatable = this.allAuthMethods.find(method => method.type === 'keyboard-interactive' && method.savedPassword === undefined)
                 if (updatable && updatable.type === 'keyboard-interactive') {
-                    updatable.savedPassword = storedPassword
+                    updatable.savedPassword = passwordToUse
                 } else {
-                    this.allAuthMethods.push({ type: 'keyboard-interactive', savedPassword: storedPassword })
+                    this.allAuthMethods.push({ type: 'keyboard-interactive', savedPassword: passwordToUse })
                 }
             }
         }

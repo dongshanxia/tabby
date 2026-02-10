@@ -111,7 +111,7 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
         this.passwordStorage.deletePassword(profile)
     }
 
-    quickConnect (query: string): PartialProfile<SSHProfile> {
+    quickConnect (query: string, password?: string): PartialProfile<SSHProfile> {
         let user: string|undefined = undefined
         let host = query
         let port = 22
@@ -128,7 +128,7 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
             host = host.split(':')[0]
         }
 
-        return {
+        const profile: PartialProfile<SSHProfile> = {
             name: query,
             type: 'ssh',
             options: {
@@ -137,6 +137,14 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
                 port,
             },
         }
+
+        // 如果提供了密码，设置到 profile 中
+        if (password) {
+            profile.options!.password = password
+            profile.options!.auth = 'password'
+        }
+
+        return profile
     }
 
     intoQuickConnectString (profile: SSHProfile): string|null {

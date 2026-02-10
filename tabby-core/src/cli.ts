@@ -18,7 +18,9 @@ export class ProfileCLIHandler extends CLIHandler {
     }
 
     async handle (event: CLIEvent): Promise<boolean> {
+        console.log('[CLI] handle event:', event)
         const op = event.argv._[0]
+        console.log('[CLI] op:', op)
 
         if (op === 'profile') {
             this.handleOpenProfile(event.argv.profileName!)
@@ -29,7 +31,8 @@ export class ProfileCLIHandler extends CLIHandler {
             return true
         }
         if (op === 'quickConnect') {
-            this.handleOpenQuickConnect(event.argv.providerId!, event.argv.query!)
+            console.log('[CLI] quickConnect - providerId:', event.argv.providerId, 'query:', event.argv.query, 'password:', (event.argv as any).password)
+            this.handleOpenQuickConnect(event.argv.providerId!, event.argv.query!, (event.argv as any).password)
             return true
         }
         return false
@@ -54,20 +57,25 @@ export class ProfileCLIHandler extends CLIHandler {
         this.hostWindow.bringToFront()
     }
 
-    private async handleOpenQuickConnect (providerId: string, query: string) {
+    private async handleOpenQuickConnect (providerId: string, query: string, password?: string) {
+        console.log('[CLI] handleOpenQuickConnect - providerId:', providerId, 'query:', query, 'password:', password)
         const quickConnectProviders = this.profiles.getProviders()
             .filter((x): x is QuickConnectProfileProvider<any> => x instanceof QuickConnectProfileProvider)
+        console.log('[CLI] quickConnectProviders:', quickConnectProviders.map(x => x.id))
         const provider = quickConnectProviders.find(x => x.id === providerId)
         if(!provider) {
             const available = quickConnectProviders.map(x => x.id).join(', ')
             console.error(`Requested provider "${providerId}" not found. Available providers: ${available}`)
             return
         }
-        const profile = provider.quickConnect(query)
+        console.log('[CLI] found provider:', provider.id)
+        const profile = provider.quickConnect(query, password)
+        console.log('[CLI] profile from quickConnect:', profile)
         if(!profile) {
             console.error(`Could not parse quick connect query "${query}"`)
             return
         }
+        console.log('[CLI] opening new tab for profile')
         this.profiles.openNewTabForProfile(profile)
         this.hostWindow.bringToFront()
     }

@@ -27,22 +27,27 @@ export class ElectronHostAppService extends HostAppService {
         electron.ipcRenderer.on('host:preferences-menu', () => this.zone.run(() => this.settingsUIRequest.next()))
 
         electron.ipcRenderer.on('cli', (_$event, argv: any, cwd: string, secondInstance: boolean) => this.zone.run(async () => {
+            console.log('[hostApp] CLI event received:', { argv, cwd, secondInstance })
             const event = { argv, cwd, secondInstance }
             this.logger.info('CLI arguments received:', event)
 
             const cliHandlers = injector.get(CLIHandler) as unknown as CLIHandler[]
+            console.log('[hostApp] CLI handlers:', cliHandlers.map(h => h.constructor.name))
             cliHandlers.sort((a, b) => b.priority - a.priority)
 
             let handled = false
             for (const handler of cliHandlers) {
+                console.log('[hostApp] Trying handler:', handler.constructor.name)
                 if (handled && handler.firstMatchOnly) {
                     continue
                 }
                 if (await handler.handle(event)) {
                     this.logger.info('CLI handler matched:', handler.constructor.name)
+                    console.log('[hostApp] Handler matched:', handler.constructor.name)
                     handled = true
                 }
             }
+            console.log('[hostApp] CLI handling done, handled:', handled)
         }))
 
         electron.ipcRenderer.on('host:config-change', () => this.zone.run(() => {

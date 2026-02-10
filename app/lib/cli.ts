@@ -81,6 +81,12 @@ export function createParserConfig (cwd: string): ParserConfig {
                         type: 'string',
                     },
                 },
+                options: {
+                    password: {
+                        describe: 'Password for authentication (ssh provider only)',
+                        type: 'string',
+                    },
+                },
             },
         ],
         options: {
