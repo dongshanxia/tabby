@@ -113,28 +113,51 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
 
     quickConnect (query: string): PartialProfile<SSHProfile> {
         let user: string|undefined = undefined
+        let password: string|undefined = undefined
         let host = query
         let port = 22
+
+        // Extract port first (from the end of string)
+        const portMatch = host.match(/:(\d+)$/)
+        if (portMatch) {
+            port = parseInt(portMatch[1])
+            host = host.substring(0, portMatch.index)
+        }
+
+        // Then handle user and password
         if (host.includes('@')) {
             const parts = host.split(/@/g)
             host = parts[parts.length - 1]
-            user = parts.slice(0, parts.length - 1).join('@')
+            const userPart = parts.slice(0, parts.length - 1).join('@')
+            // Check if user part contains password (user:password format)
+            if (userPart.includes(':')) {
+                const userParts = userPart.split(':')
+                user = userParts[0]
+                password = userParts.slice(1).join(':')
+            } else {
+                user = userPart
+            }
         }
+
+        // Handle IPv6 address port format [host]:port
         if (host.includes('[')) {
             port = parseInt(host.split(']')[1].substring(1))
             host = host.split(']')[0].substring(1)
-        } else if (host.includes(':')) {
-            port = parseInt(host.split(/:/g)[1])
-            host = host.split(':')[0]
         }
 
+        // Use a fixed ID for quick connect so password can be retrieved from keytar
+        const quickConnectId = 'quickconnect-ssh-profile'
+
         return {
+            id: quickConnectId,
             name: query,
             type: 'ssh',
             options: {
                 host,
                 user,
                 port,
+                password,
+                auth: 'password',
             },
         }
     }

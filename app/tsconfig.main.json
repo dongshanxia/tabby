@@ -21,7 +21,9 @@
            "es2015.iterable",
            "es2017",
            "es7"
-        ]
+        ],
+        "skipLibCheck": true,
+        "types": []
     },
     "compileOnSave": false,
     "exclude": [
