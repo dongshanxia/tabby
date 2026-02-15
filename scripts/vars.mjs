@@ -12,9 +12,17 @@ const electronInfo = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../node
 
 let version
 try {
-    version = childProcess.execSync('git describe --tags', { encoding:'utf-8', stdio: ['pipe', 'pipe', 'pipe'] })
-    version = version.substring(1).trim()
-    version = version.replace('-', '-c')
+    // First try to get tag that points to current HEAD (for releases)
+    version = childProcess.execSync('git tag --points-at HEAD --sort=-version:refname', { encoding:'utf-8', stdio: ['pipe', 'pipe', 'pipe'] })
+    const tags = version.trim().split('\n').filter(t => t.startsWith('v'))
+    if (tags.length > 0) {
+        version = tags[0].substring(1) // Remove 'v' prefix
+    } else {
+        // Fallback to git describe for non-tagged commits
+        version = childProcess.execSync('git describe --tags', { encoding:'utf-8', stdio: ['pipe', 'pipe', 'pipe'] })
+        version = version.substring(1).trim()
+        version = version.replace('-', '-c')
+    }
 } catch {
     version = '1.0.0'
 }
