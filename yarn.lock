@@ -6151,12 +6151,12 @@ ngx-filesize@^3.0.2:
   dependencies:
     tslib "^2.3.0"
 
-ngx-toastr@^16.0.2:
-  version "16.2.0"
-  resolved "https://verdaccio.dongshanxia.top:35000/ngx-toastr/-/ngx-toastr-16.2.0.tgz#f138c31c3b6960a1059aeea7133a44e4db95db79"
-  integrity sha512-7X6UhOKiaUeC2eTOsUqctZH0ZWKG8VlzDxWJhdEF1N3kPod46SU/Vn2l0hbt8EDwTjxHKfKyevU2idkYDoZYog==
+ngx-toastr@^20.0.5:
+  version "20.0.5"
+  resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-20.0.5.tgz#8e7c1855f637e49a4513f74cdfc46808a3bb3084"
+  integrity sha512-JcGu1Cbl+0SovPhxma72ygGeZHtpHWWKwBCyiabb+MSWYtXu/SOwEZ2HTWtZ4wcEYOOiy9tDQZgiEKWXpibpRw==
   dependencies:
-    tslib "^2.3.0"
+    tslib "^2.8.1"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -8944,7 +8944,7 @@ tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://verdaccio.dongshanxia.top:35000/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.0, tslib@^2.4.0, tslib@^2.5.0:
+tslib@^2.0.3, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.0, tslib@^2.4.0, tslib@^2.5.0, tslib@^2.8.1:
   version "2.8.1"
   resolved "https://verdaccio.dongshanxia.top:35000/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==

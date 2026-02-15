@@ -55,7 +55,7 @@
     "lru-cache": "^6.0.0",
     "macos-release": "^3.3.0",
     "ngx-filesize": "^3.0.2",
-    "ngx-toastr": "^16.0.2",
+    "ngx-toastr": "^20.0.5",
     "node-abi": "^4",
     "npmlog": "6.0.2",
     "npx": "^10.2.2",
