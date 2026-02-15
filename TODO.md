@@ -8,7 +8,7 @@
 
 ```bash
 # 带密码自动连接
-yarn start -- --no-sandbox quickConnect ssh "root:password@10.168.2.98:22"
+yarn start -- --no-sandbox quickConnect ssh "root:123@10.168.2.98:22"
 
 # 不带密码（需要手动输入）
 yarn start -- --no-sandbox quickConnect ssh "root@10.168.2.98:22"
