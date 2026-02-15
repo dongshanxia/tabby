@@ -51,3 +51,44 @@ yarn start -- --no-sandbox quickConnect ssh "root:123@10.168.2.98:22"
 
 - 密码格式：`user:password@host:port`
 - 密码中包含冒号时需转义或使用引号
+
+---
+
+# DEB 包打包流程
+
+## 1. 安装 FPM 和系统依赖 ✅
+
+```bash
+sudo apt-get update
+sudo apt-get install -y libfontconfig1-dev libarchive-tools ruby ruby-dev
+sudo gem install fpm
+```
+
+## 2. 预处理插件
+
+```bash
+node scripts/prepackage-plugins.mjs
+```
+
+## 3. 构建 Linux 包 ✅
+
+```bash
+node scripts/build-linux.mjs
+```
+
+**注意**: 构建过程中可能会因为缺少 `rpmbuild`（用于 rpm 包）而报错，但 deb 包仍然会成功生成。
+
+### 结果 ✅
+
+```bash
+# 安装 deb 包
+sudo dpkg -i dist/tabby-1.0.1-nightly.0-linux-x64.deb
+
+# 如果有依赖问题，运行：
+sudo apt-get install -f -y
+```
+
+生成的文件位于 `dist/` 目录：
+- `tabby-1.0.1-nightly.0-linux-x64.deb` - Debian/Ubuntu 包 (121MB)
+- `tabby-1.0.1-nightly.0-linux-x64.tar.gz` - 压缩包
+- `tabby-1.0.1-nightly.0-linux-x64.AppImage` - AppImage
