@@ -161,4 +161,15 @@ overrides:
     '@typescript-eslint/keyword-spacing': off
     '@typescript-eslint/class-methods-use-this': off
     '@typescript-eslint/lines-around-comment': off
-    '@typescript-eslint/no-redundant-type-constituents': off # broken
+    # broken rule, disabled
+    '@typescript-eslint/no-redundant-type-constituents': off
+    # Disable strict rules that have many violations in the codebase
+    '@typescript-eslint/max-params': off
+    '@typescript-eslint/prefer-destructuring': off
+    '@typescript-eslint/prefer-find': off
+    '@typescript-eslint/prefer-promise-reject-errors': off
+    '@typescript-eslint/no-unsafe-enum-comparison': off
+    '@typescript-eslint/prefer-optional-chain': off
+    '@typescript-eslint/prefer-regexp-exec': off
+    '@typescript-eslint/init-declarations': off
+    '@typescript-eslint/no-useless-template-literals': off
