@@ -1,10 +1,13 @@
 ---
-name: "tagged-release"
+name: "Create Release"
 
 on:
   push:
     tags:
       - "v*"
+    # 或者推送到 master2 分支时也创建 Release
+    branches:
+      - master2
 
 jobs:
   release:
@@ -17,6 +20,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Get version
+        id: version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/}
+          else
+            # 使用分支名或当前日期作为版本号
+            VERSION="dev-$(date +%Y%m%d-%H%M%S)"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Using version: ${VERSION}"
 
       - name: Wait for build to complete
         uses: lewagon/wait-on-check-action@v1.3.1
@@ -61,6 +76,7 @@ jobs:
       - name: Create Release and upload artifacts
         uses: softprops/action-gh-release@v2
         with:
+          name: Release ${{ steps.version.outputs.version }}
           draft: true
           prerelease: false
           fail_on_unmatched_files: false
