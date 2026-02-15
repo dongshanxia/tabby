@@ -227,10 +227,12 @@ export class Application {
     }
 
     async handleSecondInstance (argv: string[], cwd: string): Promise<void> {
+        console.log('[DEBUG] handleSecondInstance called:', { argv, cwd, windowCount: this.windows.length })
         if (!this.windows.length) {
             await this.newWindow()
         }
         this.presentAllWindows()
+        console.log('[DEBUG] Calling passCliArguments with secondInstance=true')
         this.windows[this.windows.length - 1].passCliArguments(argv, cwd, true)
     }
 

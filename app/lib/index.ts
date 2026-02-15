@@ -53,7 +53,7 @@ process.on('uncaughtException' as any, err => {
     application.broadcast('uncaughtException', err)
 })
 
-if (argv.d) {
+if (argv.d || true) {  // Always enable devtools for debugging
     electronDebug({
         isEnabled: true,
         showDevTools: true,
@@ -82,12 +82,20 @@ app.on('open-url', async (event, url) => {
 })
 
 app.on('second-instance', async (_event, newArgv, cwd) => {
+    console.log('[DEBUG] second-instance event received:', { newArgv, cwd })
     application.handleSecondInstance(newArgv, cwd)
 })
 
-if (!app.requestSingleInstanceLock()) {
-    app.quit()
-    app.exit(0)
+// Single instance lock - must be called before app.whenReady()
+const gotLock = app.requestSingleInstanceLock()
+console.log('[DEBUG] Single instance lock:', gotLock)
+
+if (!gotLock) {
+    console.log('[DEBUG] Could not get single instance lock, exiting...')
+    setTimeout(() => {
+        app.quit()
+        app.exit(0)
+    }, 100) // Give time for second-instance event to be fired
 }
 
 app.on('ready', async () => {

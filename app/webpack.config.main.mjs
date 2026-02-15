@@ -30,6 +30,8 @@ const config = {
                     loader: 'ts-loader',
                     options: {
                         configFile: path.resolve(__dirname, 'tsconfig.main.json'),
+                        transpileOnly: true,
+                        ignoreDiagnostics: [2688],
                     },
                 },
             },

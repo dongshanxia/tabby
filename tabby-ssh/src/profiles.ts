@@ -145,8 +145,8 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
             host = host.split(']')[0].substring(1)
         }
 
-        // Use a fixed ID for quick connect so password can be retrieved from keytar
-        const quickConnectId = 'quickconnect-ssh-profile'
+        // Use unique ID for each quick connect to avoid conflicts
+        const quickConnectId = `quickconnect-ssh-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`
 
         return {
             id: quickConnectId,
@@ -157,7 +157,7 @@ export class SSHProfilesService extends QuickConnectProfileProvider<SSHProfile> 
                 user,
                 port,
                 password,
-                auth: 'password',
+                auth: 'password' as const,
             },
         }
     }

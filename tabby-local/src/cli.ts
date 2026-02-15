@@ -7,7 +7,7 @@ import { TerminalService } from './services/terminal.service'
 @Injectable()
 export class TerminalCLIHandler extends CLIHandler {
     firstMatchOnly = true
-    priority = 0
+    priority = -10  // Lower than ProfileCLIHandler (0) to not intercept quickConnect
 
     constructor (
         private hostWindow: HostWindowService,
@@ -74,6 +74,11 @@ export class OpenPathCLIHandler extends CLIHandler {
         const op = event.argv._[0]
         const opAsPath = op ? path.resolve(event.cwd, op) : null
 
+        // Don't handle open/run in secondInstance mode
+        if (event.secondInstance && (op === 'open' || op === 'run')) {
+            return false
+        }
+
         const profile = await this.terminal.getDefaultProfile()
 
         if (opAsPath && (await fs.lstat(opAsPath)).isDirectory()) {
@@ -119,7 +124,7 @@ export class OpenPathCLIHandler extends CLIHandler {
 @Injectable()
 export class AutoOpenTabCLIHandler extends CLIHandler {
     firstMatchOnly = true
-    priority = -1000
+    priority = -10  // Lower than ProfileCLIHandler (0) to not intercept quickConnect
 
     constructor (
         private app: AppService,

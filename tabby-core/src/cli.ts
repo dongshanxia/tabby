@@ -19,6 +19,7 @@ export class ProfileCLIHandler extends CLIHandler {
 
     async handle (event: CLIEvent): Promise<boolean> {
         const op = event.argv._[0]
+        console.log('[DEBUG] ProfileCLIHandler.handle called:', { op, secondInstance: event.secondInstance, argv: event.argv })
 
         if (op === 'profile') {
             this.handleOpenProfile(event.argv.profileName!)
@@ -83,7 +84,15 @@ export class LastCLIHandler extends CLIHandler {
     }
 
     async handle (event: CLIEvent): Promise<boolean> {
+        console.log('[DEBUG] LastCLIHandler.handle called:', { secondInstance: event.secondInstance, argv: event.argv })
         if (event.secondInstance) {
+            // Don't create new window for quickConnect - let ProfileCLIHandler open new tab instead
+            const op = event.argv._[0]
+            if (op === 'quickConnect') {
+                console.log('[DEBUG] LastCLIHandler: quickConnect detected, returning false')
+                return false // Let ProfileCLIHandler handle it and open a new tab
+            }
+            console.log('[DEBUG] LastCLIHandler: creating new window')
             this.hostApp.newWindow()
             return true
         }

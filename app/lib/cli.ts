@@ -126,8 +126,31 @@ function createParserFromConfig (config: ParserConfig) {
 }
 
 export function parseArgs (argv: string[], cwd: string): any {
-    const args = argv[0].includes('node') ? argv.slice(2) : argv.slice(1)
+    // Find Tabby command arguments
+    // Valid commands: open, run, profile, paste, recent, quickConnect
+    const validCommands = ['open', 'run', 'profile', 'paste', 'recent', 'quickConnect']
+
+    // Find the start of Tabby arguments
+    let tabbyArgsStart = -1
+    for (let i = 0; i < argv.length; i++) {
+        if (validCommands.includes(argv[i])) {
+            tabbyArgsStart = i
+            break
+        }
+    }
+
+    let args: string[]
+    if (tabbyArgsStart >= 0) {
+        // Use arguments from the first valid command onwards
+        args = argv.slice(tabbyArgsStart)
+    } else {
+        // Fallback to original logic for direct startup
+        args = argv[0].includes('node') ? argv.slice(2) : argv.slice(1)
+    }
+
     const config = createParserConfig(cwd)
     const parser = createParserFromConfig(config)
-    return parser.parse(args)
+    const result = parser.parse(args)
+    console.log('[DEBUG] parseArgs result:', { op: result._, providerId: result.providerId, query: result.query })
+    return result
 }
