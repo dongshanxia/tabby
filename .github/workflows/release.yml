@@ -7,13 +7,72 @@ on:
       - "v*"
 
 jobs:
-  tagged-release:
-    name: "Tagged Release"
+  release:
+    name: "Create Release"
     runs-on: "ubuntu-latest"
 
+    permissions:
+      contents: write
+
     steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Wait for build to complete
+        uses: lewagon/wait-on-check-action@v1.3.1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
+          ref: ${{ github.ref }}
+          check-name: 'Lint'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 60
+
+      - name: Wait for macOS builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'macOS-Build'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 60
+
+      - name: Wait for Linux builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Linux-Build'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 60
+
+      - name: Wait for Windows builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Windows-Build'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 60
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Display structure of downloaded files
+        run: ls -R artifacts
+
+      - name: Create Release and upload artifacts
+        uses: softprops/action-gh-release@v2
+        with:
           draft: true
+          prerelease: false
+          fail_on_unmatched_files: false
+          files: |
+            artifacts/**/*.dmg
+            artifacts/**/*.zip
+            artifacts/**/*.AppImage
+            artifacts/**/*.deb
+            artifacts/**/*.rpm
+            artifacts/**/*.pacman
+            artifacts/**/*.tar.gz
+            artifacts/**/*-setup-*.exe
+            artifacts/**/*-portable-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
