@@ -68,11 +68,12 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^15.2.6":
-  version "15.2.10"
-  resolved "https://verdaccio.dongshanxia.top:35000/@angular/forms/-/forms-15.2.10.tgz#09308e887df2fa4d349300c9d1f05cadfb3872b3"
-  integrity sha512-NIntGsNcN6o8L1txsbWXOf6f3K/CUBizdKsxsYVYGJIXEW5qU6UnWmfAZffNNXsT/XvbgUCjgDwT0cAwcqZPuQ==
+"@angular/forms@^21.1.4":
+  version "21.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-21.1.4.tgz#00c80fbb49204c036f3a7f7af83bf9e067af523e"
+  integrity sha512-duVT/eOncmFNBYRlK/F7WDg6GD1vL1mxUrDdnp7M9J8JvNrKH0PvdfzuOAmjbB8/bsvUNTLFXCV4+43Mc2Hqsw==
   dependencies:
+    "@standard-schema/spec" "^1.0.0"
     tslib "^2.3.0"
 
 "@angular/localize@^15.2.9":
@@ -855,6 +856,11 @@
   version "4.6.0"
   resolved "https://verdaccio.dongshanxia.top:35000/@sindresorhus/is/-/is-4.6.0.tgz#3c7c9c46e678feefe7a2e5bb609d3dbd665ffb3f"
   integrity sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==
+
+"@standard-schema/spec@^1.0.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@standard-schema/spec/-/spec-1.1.0.tgz#a79b55dbaf8604812f52d140b2c9ab41bc150bb8"
+  integrity sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==
 
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
