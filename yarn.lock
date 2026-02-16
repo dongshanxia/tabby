@@ -15,10 +15,10 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular/animations@^15.2.6":
-  version "15.2.10"
-  resolved "https://verdaccio.dongshanxia.top:35000/@angular/animations/-/animations-15.2.10.tgz#c9194ba9a2b9b4e466e9c76e18591cde096a28e8"
-  integrity sha512-yxfN8qQpMaukRU5LjFkJBmy85rqrOp86tYVCsf+hmPEFRiXBMUj6xYLeCMcpk3Mt1JtnWGBR34ivGx+7bNeAow==
+"@angular/animations@^21.1.4":
+  version "21.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-21.1.4.tgz#608c163e0730ca0028a15ad40484e836592d1e31"
+  integrity sha512-8xQ0Ylw7qqVyw4ZJ/Tyw/z5Mtqtp8AMj+R+Z1sCWcyxBgDU4+qfxteVYdiipWC3tX77A0FTsXqwvNP9WVY2/WA==
   dependencies:
     tslib "^2.3.0"
 

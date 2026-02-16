@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@angular/animations": "^15.2.6",
+    "@angular/animations": "^21.1.4",
     "@angular/cdk": "^15.2.6",
     "@angular/common": "^15.2.6",
     "@angular/compiler": "^15.2.6",
