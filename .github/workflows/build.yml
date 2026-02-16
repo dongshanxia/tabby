@@ -341,7 +341,7 @@ jobs:
     - name: Build
       shell: powershell
       run: |
-        npm i -g yar node-gyp
+        npm i -g yarn node-gyp
         yarn --network-timeout 1000000
         yarn run build --arch=${{matrix.arch}} --target_arch=${{matrix.arch}}
         node scripts/prepackage-plugins.mjs
