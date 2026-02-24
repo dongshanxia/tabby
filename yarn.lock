@@ -710,65 +710,64 @@
     "@sentry/utils" "6.7.1"
     tslib "^1.9.3"
 
-"@sentry/cli-darwin@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-darwin/-/cli-darwin-2.58.4.tgz#5e3005c1f845acac243e8dcb23bef17337924768"
-  integrity sha512-kbTD+P4X8O+nsNwPxCywtj3q22ecyRHWff98rdcmtRrvwz8CKi/T4Jxn/fnn2i4VEchy08OWBuZAqaA5Kh2hRQ==
+"@sentry/cli-darwin@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-darwin/-/cli-darwin-3.2.2.tgz#a1f2a0fb1021e82fd49b144e3f8216252525d327"
+  integrity sha512-y1uglMBbo9dYqC92hTQBkuGk7SegLPo1cVwJzX0dhplJoBMuanLMhOMYd1J20qhkDdBhguflCHGf0tOzNTGWhg==
 
-"@sentry/cli-linux-arm64@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-linux-arm64/-/cli-linux-arm64-2.58.4.tgz#69da57656fda863f255d92123c3a3437e470408e"
-  integrity sha512-0g0KwsOozkLtzN8/0+oMZoOuQ0o7W6O+hx+ydVU1bktaMGKEJLMAWxOQNjsh1TcBbNIXVOKM/I8l0ROhaAb8Ig==
+"@sentry/cli-linux-arm64@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-linux-arm64/-/cli-linux-arm64-3.2.2.tgz#bc1e1bca7e7b7dc21dc0430621899f6270f80402"
+  integrity sha512-SIGJknEQNDw9S/8QPTl8QLVe2IEiTKH3NeeHQ/Q2XWXig1ZebJfm4iTrdu47ypszIfxHeLvQkkVrr8mRKq16xA==
 
-"@sentry/cli-linux-arm@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-linux-arm/-/cli-linux-arm-2.58.4.tgz#869ddab30f0dcebc0e61cff2f3ff47dcd40f8abe"
-  integrity sha512-rdQ8beTwnN48hv7iV7e7ZKucPec5NJkRdrrycMJMZlzGBPi56LqnclgsHySJ6Kfq506A2MNuQnKGaf/sBC9REA==
+"@sentry/cli-linux-arm@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-linux-arm/-/cli-linux-arm-3.2.2.tgz#14628eb95c4bb9c8d37f685248f4275fd991c76e"
+  integrity sha512-CC7N3hjOgs3cwrW0T9hqirFVUpKO6ASjdd0JT4DQHaAn34pruv8J+OoSnj1jkrT2DHxDkNNZPOFSK05AnHr8wA==
 
-"@sentry/cli-linux-i686@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-linux-i686/-/cli-linux-i686-2.58.4.tgz#e30ca6b897147b3fb7b2e8684b139183d55e21c6"
-  integrity sha512-NseoIQAFtkziHyjZNPTu1Gm1opeQHt7Wm1LbLrGWVIRvUOzlslO9/8i6wETUZ6TjlQxBVRgd3Q0lRBG2A8rFYA==
+"@sentry/cli-linux-i686@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-linux-i686/-/cli-linux-i686-3.2.2.tgz#cf764010230f310f9dbc313cec250b4e61ab97ad"
+  integrity sha512-W2hQ2DvIlZI05j2JN/87lfeo51F24zmQOJU6Uz+fZz/mkSvpnjeWxjAvfDNVGlLxp7XSoDbhHfrLBxdIh6jMeg==
 
-"@sentry/cli-linux-x64@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-linux-x64/-/cli-linux-x64-2.58.4.tgz#f667e1fcaf0860f15401af8e0ee72f5013d84458"
-  integrity sha512-d3Arz+OO/wJYTqCYlSN3Ktm+W8rynQ/IMtSZLK8nu0ryh5mJOh+9XlXY6oDXw4YlsM8qCRrNquR8iEI1Y/IH+Q==
+"@sentry/cli-linux-x64@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-linux-x64/-/cli-linux-x64-3.2.2.tgz#7ced3f60c508c8ef8ecc71a9d9f925a370d084f8"
+  integrity sha512-4mh3yvOUxO63lq3teexRvalD1mWaRVjpgL2cCMKA2wkB69lcL5nK2gkdzDUKx2y/elluVdvGPPZaqOr1bfNI0w==
 
-"@sentry/cli-win32-arm64@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-win32-arm64/-/cli-win32-arm64-2.58.4.tgz#f612c5788954e2a97b6626e9e46fa9a41cb049c1"
-  integrity sha512-bqYrF43+jXdDBh0f8HIJU3tbvlOFtGyRjHB8AoRuMQv9TEDUfENZyCelhdjA+KwDKYl48R1Yasb4EHNzsoO83w==
+"@sentry/cli-win32-arm64@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-win32-arm64/-/cli-win32-arm64-3.2.2.tgz#a884f8d9c18d2fdbcdb0a3c61c3bccaa662007a6"
+  integrity sha512-TQgfkdJgd8Y/lPzDibqc5Hamg8Hl5rN1sZwX80n4r9Ly46Yzu8Bv6KUhoNL/ktAvw9Aeko6Bx54rwZnzxFZHwg==
 
-"@sentry/cli-win32-i686@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-win32-i686/-/cli-win32-i686-2.58.4.tgz#5611c05499f1b959d23e37650d0621d299c49cfc"
-  integrity sha512-3triFD6jyvhVcXOmGyttf+deKZcC1tURdhnmDUIBkiDPJKGT/N5xa4qAtHJlAB/h8L9jgYih9bvJnvvFVM7yug==
+"@sentry/cli-win32-i686@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-win32-i686/-/cli-win32-i686-3.2.2.tgz#7470e16be9abe4b55f97f1e58bd66b765c3f2b29"
+  integrity sha512-vAcnq0SdYuvwIdREgF5APocjW3d9Z17xLwugpaAz8wpOjCeC1iMEFWqbz5k49i4iDkDVNFRMENiVvWVSu1kEnA==
 
-"@sentry/cli-win32-x64@2.58.4":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli-win32-x64/-/cli-win32-x64-2.58.4.tgz#3290c59399579e8d484c97246cfa720171241061"
-  integrity sha512-cSzN4PjM1RsCZ4pxMjI0VI7yNCkxiJ5jmWncyiwHXGiXrV1eXYdQ3n1LhUYLZ91CafyprR0OhDcE+RVZ26Qb5w==
+"@sentry/cli-win32-x64@3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli-win32-x64/-/cli-win32-x64-3.2.2.tgz#87db0a4b6de30c9b27d92a30b379d954e00c6204"
+  integrity sha512-xWPTXjSSdmoyG/0ee7A9KSfsScGHCdaXMP6ASt4bMx3yYJO7ziEoZzfJE2M6oglz+woAm0LV9+O/n7g80tixlQ==
 
-"@sentry/cli@^2.18.1":
-  version "2.58.4"
-  resolved "https://verdaccio.dongshanxia.top:35000/@sentry/cli/-/cli-2.58.4.tgz#eb8792600cdf956cc4fe2bf51380ea1682327411"
-  integrity sha512-ArDrpuS8JtDYEvwGleVE+FgR+qHaOp77IgdGSacz6SZy6Lv90uX0Nu4UrHCQJz8/xwIcNxSqnN22lq0dH4IqTg==
+"@sentry/cli@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@sentry/cli/-/cli-3.2.2.tgz#ca5d6b9c09b167f3ae3450ef1ca10f1a0821bd3e"
+  integrity sha512-qmjsm9+Bq/3QGTnIfOsJdhq+8LI3imxAPbGNBpRj4R0YFk+b1ry9huRHCLgkMcRFWtPkJmGZwEq2Z7e+02QPLA==
   dependencies:
-    https-proxy-agent "^5.0.0"
-    node-fetch "^2.6.7"
     progress "^2.0.3"
     proxy-from-env "^1.1.0"
+    undici "^6.22.0"
     which "^2.0.2"
   optionalDependencies:
-    "@sentry/cli-darwin" "2.58.4"
-    "@sentry/cli-linux-arm" "2.58.4"
-    "@sentry/cli-linux-arm64" "2.58.4"
-    "@sentry/cli-linux-i686" "2.58.4"
-    "@sentry/cli-linux-x64" "2.58.4"
-    "@sentry/cli-win32-arm64" "2.58.4"
-    "@sentry/cli-win32-i686" "2.58.4"
-    "@sentry/cli-win32-x64" "2.58.4"
+    "@sentry/cli-darwin" "3.2.2"
+    "@sentry/cli-linux-arm" "3.2.2"
+    "@sentry/cli-linux-arm64" "3.2.2"
+    "@sentry/cli-linux-i686" "3.2.2"
+    "@sentry/cli-linux-x64" "3.2.2"
+    "@sentry/cli-win32-arm64" "3.2.2"
+    "@sentry/cli-win32-i686" "3.2.2"
+    "@sentry/cli-win32-x64" "3.2.2"
 
 "@sentry/core@6.7.1":
   version "6.7.1"
@@ -6209,13 +6208,6 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@^2.6.7:
-  version "2.7.0"
-  resolved "https://verdaccio.dongshanxia.top:35000/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
-  integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
-  dependencies:
-    whatwg-url "^5.0.0"
-
 node-gyp-build@^4.2.1:
   version "4.8.4"
   resolved "https://verdaccio.dongshanxia.top:35000/node-gyp-build/-/node-gyp-build-4.8.4.tgz#8a70ee85464ae52327772a90d66c6077a900cfc8"
@@ -8896,11 +8888,6 @@ tough-cookie@~2.5.0:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-tr46@~0.0.3:
-  version "0.0.3"
-  resolved "https://verdaccio.dongshanxia.top:35000/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
-  integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
-
 truncate-utf8-bytes@^1.0.0:
   version "1.0.2"
   resolved "https://verdaccio.dongshanxia.top:35000/truncate-utf8-bytes/-/truncate-utf8-bytes-1.0.2.tgz#405923909592d56f78a5818434b0b78489ca5f2b"
@@ -9078,6 +9065,11 @@ undici-types@~7.16.0:
   version "7.16.0"
   resolved "https://verdaccio.dongshanxia.top:35000/undici-types/-/undici-types-7.16.0.tgz#ffccdff36aea4884cbfce9a750a0580224f58a46"
   integrity sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==
+
+undici@^6.22.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-6.23.0.tgz#7953087744d9095a96f115de3140ca3828aff3a4"
+  integrity sha512-VfQPToRA5FZs/qJxLIinmU59u0r7LXqoJkCzinq3ckNJp3vKEh7jTWN589YQ5+aoAC/TGRLyJLCPKcLQbM8r9g==
 
 unique-filename@^1.1.0, unique-filename@~1.1.0:
   version "1.1.1"
@@ -9318,11 +9310,6 @@ wcwidth@^1.0.0, wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webidl-conversions@^3.0.0:
-  version "3.0.1"
-  resolved "https://verdaccio.dongshanxia.top:35000/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
-  integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
-
 webpack-bundle-analyzer@^4.7.0:
   version "4.10.2"
   resolved "https://verdaccio.dongshanxia.top:35000/webpack-bundle-analyzer/-/webpack-bundle-analyzer-4.10.2.tgz#633af2862c213730be3dbdf40456db171b60d5bd"
@@ -9404,14 +9391,6 @@ webpack@^5.90.0:
     terser-webpack-plugin "^5.3.16"
     watchpack "^2.5.1"
     webpack-sources "^3.3.3"
-
-whatwg-url@^5.0.0:
-  version "5.0.0"
-  resolved "https://verdaccio.dongshanxia.top:35000/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
-  integrity sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==
-  dependencies:
-    tr46 "~0.0.3"
-    webidl-conversions "^3.0.0"
 
 which-boxed-primitive@^1.0.1, which-boxed-primitive@^1.1.0, which-boxed-primitive@^1.1.1:
   version "1.1.1"
