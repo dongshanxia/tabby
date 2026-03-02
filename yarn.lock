@@ -91,10 +91,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^15.2.6":
-  version "15.2.10"
-  resolved "https://verdaccio.dongshanxia.top:35000/@angular/platform-browser/-/platform-browser-15.2.10.tgz#ca5a904b4da9e0cf719414db89514ee4221cb93d"
-  integrity sha512-9tbgVGSJqwfrOzT8aA/kWBLNhJSQ9gUg0CJxwFBSJm8VkBUJrszoBlDsnSvlxx8/W2ejNULKHFTXeUzq0O/+RQ==
+"@angular/platform-browser@^21.2.0":
+  version "21.2.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-21.2.0.tgz#91a05929d15de93e9d44adf91ab7c6fe445a8a3c"
+  integrity sha512-IUGukpvvT2B5Dl76qzk6rY7UIHUT9u4BhT2AwVz+5JqcX9KwQtYD17Gt7wj6bvIgCXKWG+CfN8Zd9DECOCYWjg==
   dependencies:
     tslib "^2.3.0"
 
