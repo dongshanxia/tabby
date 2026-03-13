@@ -3008,10 +3008,10 @@ node-gyp@^10.0.0, node-gyp@^5.0.2, node-gyp@^5.1.1:
     tar "^6.2.1"
     which "^4.0.0"
 
-node-pty@^1.2.0-beta.8:
-  version "1.2.0-beta.11"
-  resolved "https://verdaccio.dongshanxia.top:35000/node-pty/-/node-pty-1.2.0-beta.11.tgz#b12338927cd5da9cfba82e39b5b36f74e52cbbe1"
-  integrity sha512-THcUyu1WwdgoIyUvgXOZ70EOMXzheGa0q3tbEb5kUIfKgcpBJ+AJ9Q1kq0bKtYmQzr77usXiTORZTLmAUQlnoQ==
+node-pty@^1.2.0-beta.12:
+  version "1.2.0-beta.12"
+  resolved "https://registry.yarnpkg.com/node-pty/-/node-pty-1.2.0-beta.12.tgz#4ea572e1b655e19c005f6e34e948e18ffd040d21"
+  integrity sha512-uExTCG/4VmSJa4+TjxFwPXv8BfacmfFEBL6JpxCMDghcwqzvD0yTcGmZ1fKOK6HY33tp0CelLblqTECJizc+Yw==
   dependencies:
     node-addon-api "^7.1.0"
 
